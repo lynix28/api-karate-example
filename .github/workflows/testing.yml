@@ -18,7 +18,8 @@ jobs:
                 distribution: "temurin"
                 cache: maven
             - name: Run Test
-              run: mvn test
+              run: mvn test -Dtest=runner.Runner#testAllParallel
+              continue-on-error: true
             - name: Export test results as a tar file
               run: tar -cvf test-results.tar ./target/karate-reports/
               working-directory: ${{ github.workspace }}

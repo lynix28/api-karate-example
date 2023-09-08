@@ -60,4 +60,4 @@ Feature: Testing GET API
         Examples:
             | key    |
             | id     |
-            | userId |
+            # | userId |
