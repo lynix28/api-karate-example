@@ -23,6 +23,3 @@ jobs:
               if: always()
               run: tar -cvf test-results.tar ./target/karate-reports/
               working-directory: ${{ github.workspace }}
-            - name: Update dependency graph
-              if: always()  
-              uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
