@@ -22,4 +22,8 @@ jobs:
             - name: Export test results as a tar file
               if: always()
               run: tar -cvf test-results.tar ./target/karate-reports/
-              working-directory: ${{ github.workspace }}
+            - name: Archieve test artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                name: test-results
+                path: test-results.tar
