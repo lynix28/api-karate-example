@@ -21,7 +21,7 @@ pipeline {
   post {
     always {
       script {
-        def workspacePath = pwd()
+        def workspacePath = env.WORKSPACE
         archiveArtifacts artifacts: "${workspacePath}/target/karate-reports/*", allowEmptyArchive: true
       }
     }
