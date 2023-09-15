@@ -20,7 +20,7 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts artifacts: 'target/karate-reports/', allowEmptyArchive: true
+      archiveArtifacts artifacts: './target/karate-reports/*', allowEmptyArchive: true
     }
   }
 }
