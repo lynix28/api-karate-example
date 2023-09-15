@@ -20,7 +20,10 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts artifacts: './target/karate-reports/*', allowEmptyArchive: true
+      script {
+        def workspacePath = pwd()
+        archiveArtifacts artifacts: "${workspacePath}/target/karate-reports/*", allowEmptyArchive: true
+      }
     }
   }
 }
