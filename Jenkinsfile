@@ -11,13 +11,13 @@ pipeline {
       steps {
         sh 'mvn test'
       }
-    }
-  }
-  post {
-    always {
-      script {
-        // def workspacePath = env.WORKSPACE
-        archiveArtifacts artifacts: "**/target/karate-reports/", allowEmptyArchive: true
+      post {
+        always {
+          script {
+            def workspacePath = env.WORKSPACE
+            archiveArtifacts artifacts: "${workspacePath}/target/karate-reports/*", allowEmptyArchive: true
+          }
+        }
       }
     }
   }
