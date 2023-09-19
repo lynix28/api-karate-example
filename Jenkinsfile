@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
     stage('Test') {
       agent {
         docker {
@@ -21,8 +16,8 @@ pipeline {
   post {
     always {
       script {
-        def workspacePath = env.WORKSPACE
-        archiveArtifacts artifacts: "${workspacePath}@2/target/karate-reports/*", allowEmptyArchive: true
+        // def workspacePath = env.WORKSPACE
+        archiveArtifacts artifacts: "**/target/karate-reports/", allowEmptyArchive: true
       }
     }
   }
