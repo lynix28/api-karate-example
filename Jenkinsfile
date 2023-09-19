@@ -15,7 +15,7 @@ pipeline {
         always {
           script {
             def workspacePath = env.WORKSPACE
-            archiveArtifacts artifacts: "target/karate-reports/*", allowEmptyArchive: true
+            archiveArtifacts artifacts: "target/karate-reports/", allowEmptyArchive: true
           }
         }
       }
