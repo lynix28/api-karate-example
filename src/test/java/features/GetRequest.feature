@@ -5,7 +5,7 @@ Feature: Testing GET API
     I want to validate the API is meet the requirement
 
     Background:
-        Given configure url = "https://jsonplaceholder.typicode.com"
+        Given url "https://jsonplaceholder.typicode.com"
         And path "/posts"
         When method GET
 
